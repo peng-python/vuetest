@@ -24,10 +24,13 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_jwt.views import obtain_jwt_token
 
 from users.views import UserViewSet
+from goods.views import GoodsViewSet, CategoryViewSet
 
 router = DefaultRouter()
 
 router.register(r'users', UserViewSet, base_name='users')
+router.register(r'categorys', CategoryViewSet, base_name='categorys')
+router.register(r'goods', GoodsViewSet, base_name='goods')
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
